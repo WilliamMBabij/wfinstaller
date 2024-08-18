@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Product Id="*" Name="NetSpective Logon Agent" Version="3.0.15" Manufacturer="Grom Educational Services, Inc" UpgradeCode="e09cc5cf-2be8-4e13-a184-76b3b7630b63" Language="1033">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <!-- Embed the license.rtf file -->
+    <Binary Id="LicenseRtf" SourceFile="license.rtf" />
+    
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="NetSpective Logon Agent">
+          <Component Id="ProductComponent" Guid="2c2b37f4-8b77-462e-8144-ac1920bb649d">
+            <File Id="WFlogon.exe" Source="WFlogon.exe" />
+            <!-- Registry entry to run wflogon.exe at user logon -->
+<RegistryKey Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Run">
+  <RegistryValue Type="string" Name="NetSpective Logon Agent" Value="[INSTALLFOLDER]WFlogon.exe" />
+</RegistryKey>
+<!-- Registry entries to store flags and IP addresses -->
+<RegistryKey Root="HKLM" Key="Software\[Manufacturer]\[ProductName]">
+  <RegistryValue Type="string" Name="Flags" Value="[FLAGS]" />
+  <RegistryValue Type="string" Name="IPAddresses" Value="[IP_ADDRESSES]" />
+</RegistryKey>
+
+ <util:User Id="TaskUser" CreateUser="no" RemoveOnUninstall="no" UpdateIfExists="yes" Name="[LogonUser]" Password="[LogonPassword]" />
+<util:ScheduledTask Id="RunAtLogon" Name="NetSpective Logon Agent Task" 
+                    Execute="highest" 
+                    TaskUser="TaskUser" 
+                    Description="Runs wflogon.exe at user logon">
+  <util:LogonTrigger />
+  <util:CommandLine CommandLine="[INSTALLFOLDER]WFlogon.exe [FLAGS] [IP_ADDRESSES]" />
+</util:ScheduledTask>
+
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    
+    <Feature Id="ProductFeature" Title="Main Feature" Level="1">
+      <ComponentRef Id="ProductComponent" />
+    </Feature>
+    
+    <UI>
+    <!-- Reference to built-in WelcomeDlg -->
+      <DialogRef Id="WelcomeDlg" />
+      <!-- EULA Dialog -->
+      <Dialog Id="EulaDialog" Width="370" Height="270" Title="[ProductName] Setup">
+        <Control Id="EulaText" Type="ScrollableText" X="20" Y="45" Width="330" Height="180" Property="LICENSE_TEXT" />
+        <Control Id="BackButton" Type="PushButton" X="175" Y="243" Width="56" Height="17" Text="&amp;Back">
+          <Publish Event="NewDialog" Value="WelcomeDlg">1</Publish>
+        </Control>
+        <Control Id="AcceptButton" Type="PushButton" X="235" Y="243" Width="56" Height="17" Default="yes" Text="&amp;Accept">
+          <Publish Event="NewDialog" Value="CustomDialog">1</Publish>
+        </Control>
+      </Dialog>
+
+      <!-- Custom Dialog for Flags and IP Addresses -->
+      <Dialog Id="CustomDialog" Width="370" Height="270" Title="[ProductName] Setup">
+        <Control Id="FlagsText" Type="Text" X="20" Y="25" Width="330" Height="18" Text="Enter Flags (separate multiple flags with spaces, e.g., -s):" />
+        <Control Id="FlagsEdit" Type="Edit" X="20" Y="45" Width="330" Height="18" Property="FLAGS" />
+        <Control Id="IpAddressesText" Type="Text" X="20" Y="65" Width="330" Height="18" Text="Enter IP Addresses (separate multiple IPs with commas, e.g., 10.0.0.1, 10.0.0.2):" />
+        <Control Id="IpAddressesEdit" Type="Edit" X="20" Y="85" Width="330" Height="18" Property="IP_ADDRESSES" />
+        <Control Id="BackButton" Type="PushButton" X="175" Y="243" Width="56" Height="17" Text="&amp;Back">
+          <Publish Event="NewDialog" Value="EulaDialog">1</Publish>
+        </Control>
+        <Control Id="NextButton" Type="PushButton" X="235" Y="243" Width="56" Height="17" Default="yes" Text="&amp;Next">
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+      </Dialog>
+
+      <!-- Modify Installation Dialog -->
+      <Dialog Id="ModifyDialog" Width="370" Height="270" Title="[ProductName] Setup">
+        <Control Id="ModifyText" Type="Text" X="20" Y="45" Width="330" Height="180" Text="You are modifying your installation. Please update the FLAGS and IP_ADDRESSES." />
+        <Control Id="BackButton" Type="PushButton" X="175" Y="243" Width="56" Height="17" Text="&amp;Back">
+          <Publish Event="NewDialog" Value="CustomDialog">1</Publish>
+        </Control>
+        <Control Id="NextButton" Type="PushButton" X="235" Y="243" Width="56" Height="17" Default="yes" Text="&amp;Next">
+          <Publish Event="EndDialog" Value="Return">1</Publish>
+        </Control>
+      </Dialog>
+
+      <!-- Exit Dialog -->
+<Dialog Id="ExitDialog" Width="370" Height="270" Title="[ProductName] Setup">
+  <Control Id="ExitText" Type="Text" X="20" Y="45" Width="330" Height="180" Text="Are you sure you want to cancel the installation?" />
+  <Control Id="YesButton" Type="PushButton" X="175" Y="243" Width="56" Height="17" Text="&amp;Yes">
+    <Publish Event="EndDialog" Value="Exit">1</Publish>
+  </Control>
+  <Control Id="NoButton" Type="PushButton" X="235" Y="243" Width="56" Height="17" Default="yes" Text="&amp;No">
+    <Publish Event="EndDialog" Value="Return">1</Publish>
+  </Control>
+</Dialog>
+
+      
+      <!-- InstallUISequence -->
+      <InstallUISequence>
+  <Show Dialog="WelcomeDlg" Before="ExecuteAction">NOT Installed</Show>
+  <Show Dialog="EulaDialog" After="WelcomeDlg">NOT Installed</Show>
+  <Show Dialog="CustomDialog" After="EulaDialog">NOT Installed</Show>
+  <Show Dialog="ModifyDialog" Before="ExecuteAction">Installed AND NOT REMOVE</Show>
+</InstallUISequence>
+
+
+    </UI>
+
+   
+
+
+    <!-- Property Definitions -->
+    <Property Id="LICENSE_TEXT" Value="license.rtf" />
+  </Product>
+</Wix>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.0.0.0</ProductVersion>
+    <ProjectGuid>{3e965fdb-1edf-46fb-8165-8b8af894c249}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>NetSpective Logon Agent</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="wfinstaller.wxs" />
+    <WixExtension Include="WixUtilExtension">
+    <HintPath>WixUtilExtension.dll</HintPath>
+  </WixExtension>
+  </ItemGroup>
+
+  <Import Project="$(WixTargetsPath)" />
+</Project>
+
+
