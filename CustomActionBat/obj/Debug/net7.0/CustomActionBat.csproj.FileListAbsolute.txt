@@ -1,0 +1,5 @@
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\net7.0\CustomActionBat.csproj.AssemblyReference.cache
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\net7.0\CustomActionBat.GeneratedMSBuildEditorConfig.editorconfig
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\net7.0\CustomActionBat.AssemblyInfoInputs.cache
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\net7.0\CustomActionBat.AssemblyInfo.cs
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\net7.0\CustomActionBat.csproj.CoreCompileInputs.cache

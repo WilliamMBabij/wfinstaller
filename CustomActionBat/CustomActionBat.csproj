@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Deployment.WindowsInstaller">
+      <HintPath>C:\Program Files (x86)\WiX Toolset v3.11\bin\Microsoft.Deployment.WindowsInstaller.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

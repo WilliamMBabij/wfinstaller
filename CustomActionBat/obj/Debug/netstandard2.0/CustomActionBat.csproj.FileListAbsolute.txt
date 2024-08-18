@@ -1,0 +1,12 @@
+D:\JavaScript\wfinstaller\CustomActionBat\bin\Debug\netstandard2.0\CustomActionBat.deps.json
+D:\JavaScript\wfinstaller\CustomActionBat\bin\Debug\netstandard2.0\CustomActionBat.dll
+D:\JavaScript\wfinstaller\CustomActionBat\bin\Debug\netstandard2.0\CustomActionBat.pdb
+D:\JavaScript\wfinstaller\CustomActionBat\bin\Debug\netstandard2.0\Microsoft.Deployment.WindowsInstaller.dll
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\netstandard2.0\CustomActionBat.csproj.AssemblyReference.cache
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\netstandard2.0\CustomActionBat.GeneratedMSBuildEditorConfig.editorconfig
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\netstandard2.0\CustomActionBat.AssemblyInfoInputs.cache
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\netstandard2.0\CustomActionBat.AssemblyInfo.cs
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\netstandard2.0\CustomActionBat.csproj.CoreCompileInputs.cache
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\netstandard2.0\CustomActionBat.csproj.CopyComplete
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\netstandard2.0\CustomActionBat.dll
+D:\JavaScript\wfinstaller\CustomActionBat\obj\Debug\netstandard2.0\CustomActionBat.pdb

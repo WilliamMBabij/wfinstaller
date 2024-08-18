@@ -1,0 +1,2 @@
+D:\JavaScript\wfinstaller\obj\Release\wfinstaller.wixproj.CoreCompileInputs.cache
+D:\JavaScript\wfinstaller\obj\Release\wfinstaller.wixproj.AssemblyReference.cache

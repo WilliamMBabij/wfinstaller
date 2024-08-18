@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "CustomActionBat/1.0.0": {
+        "dependencies": {
+          "WixToolset.Dtf.WindowsInstaller": "4.0.1"
+        },
+        "runtime": {
+          "CustomActionBat.dll": {}
+        }
+      },
+      "WixToolset.Dtf.WindowsInstaller/4.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/WixToolset.Dtf.WindowsInstaller.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.0.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CustomActionBat/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WixToolset.Dtf.WindowsInstaller/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+mEb3koK5HWzVBElwJnVYwtv5hZtZ1PJZsx8BIKIEad2I4tBtOeDEwFXwG9mpCSJhJroLPS5bCVCtX4uiudt8g==",
+      "path": "wixtoolset.dtf.windowsinstaller/4.0.1",
+      "hashPath": "wixtoolset.dtf.windowsinstaller.4.0.1.nupkg.sha512"
+    }
+  }
+}
