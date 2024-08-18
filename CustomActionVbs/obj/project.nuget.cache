@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "N8nD+C/etsHdurC1/zW+K45vcxCFURk5Uekhf4hMqjI+WVvcs8HrzQB2bxYtVkIEzZH9qDj03v3ZUjJJssURfw==",
+  "success": true,
+  "projectFilePath": "E:\\JavaScript\\wfinstaller\\CustomActionVbs\\CustomActionVbs.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Demonos\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "C:\\Users\\Demonos\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net452\\1.0.3\\microsoft.netframework.referenceassemblies.net452.1.0.3.nupkg.sha512",
+    "C:\\Users\\Demonos\\.nuget\\packages\\taskscheduler\\2.10.1\\taskscheduler.2.10.1.nupkg.sha512"
+  ],
+  "logs": []
+}

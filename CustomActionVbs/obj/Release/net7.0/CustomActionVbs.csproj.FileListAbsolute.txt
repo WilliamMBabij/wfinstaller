@@ -1,0 +1,12 @@
+D:\JavaScript\wfinstaller\CustomActionVbs\obj\Release\net7.0\CustomActionVbs.csproj.AssemblyReference.cache
+D:\JavaScript\wfinstaller\CustomActionVbs\obj\Release\net7.0\CustomActionVbs.GeneratedMSBuildEditorConfig.editorconfig
+D:\JavaScript\wfinstaller\CustomActionVbs\obj\Release\net7.0\CustomActionVbs.AssemblyInfoInputs.cache
+D:\JavaScript\wfinstaller\CustomActionVbs\obj\Release\net7.0\CustomActionVbs.AssemblyInfo.cs
+D:\JavaScript\wfinstaller\CustomActionVbs\obj\Release\net7.0\CustomActionVbs.csproj.CoreCompileInputs.cache
+D:\JavaScript\wfinstaller\CustomActionVbs\bin\Release\net7.0\CustomActionVbs.deps.json
+D:\JavaScript\wfinstaller\CustomActionVbs\bin\Release\net7.0\CustomActionVbs.dll
+D:\JavaScript\wfinstaller\CustomActionVbs\bin\Release\net7.0\CustomActionVbs.pdb
+D:\JavaScript\wfinstaller\CustomActionVbs\obj\Release\net7.0\CustomActionVbs.dll
+D:\JavaScript\wfinstaller\CustomActionVbs\obj\Release\net7.0\refint\CustomActionVbs.dll
+D:\JavaScript\wfinstaller\CustomActionVbs\obj\Release\net7.0\CustomActionVbs.pdb
+D:\JavaScript\wfinstaller\CustomActionVbs\obj\Release\net7.0\ref\CustomActionVbs.dll
